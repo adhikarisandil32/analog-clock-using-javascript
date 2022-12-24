@@ -1,0 +1,221 @@
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 16px;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+div.analog-clock{
+  --size: 250px;
+  height: var(--size);
+  width: var(--size);
+  border: 10px solid black;
+  border-radius: 50%;
+  position: relative;
+}
+
+div.analog-clock::after{
+  content: "";
+  display: block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.clock-number-container{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.number{
+  --rotate: 0deg;
+  height: 50%;
+  width: 2.5rem;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+
+/*Instead of JS only if CSS is used to display the number as well.*/
+/*
+div.number1{
+  --rotate: 30deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number2{
+  --rotate: 60deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number3{
+  --rotate: 90deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number4{
+  --rotate: 120deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number5{
+  --rotate: 150deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number6{
+  --rotate: 180deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number7{
+  --rotate: 210deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number8{
+  --rotate: 240deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number9{
+  --rotate: 270deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number10{
+  --rotate: 300deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number11{
+  --rotate: 330deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+div.number12{
+  --rotate: 0deg;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+}
+*/
+
+.number > span{
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  transform-origin: center center;
+  cursor: context-menu;
+  transform: rotate(var(--rotate));
+}
+
+/*Instead of JS only if CSS is used to display the number as well.*/
+/*
+div.number1 > span{
+  --rotate: -30deg;
+  transform: rotate(var(--rotate));
+}
+div.number2 > span{
+  --rotate: -60deg;
+  transform: rotate(var(--rotate));
+}
+div.number3 > span{
+  --rotate: -90deg;
+  transform: rotate(var(--rotate));
+}
+div.number4 > span{
+  --rotate: -120deg;
+  transform: rotate(var(--rotate));
+}
+div.number5 > span{
+  --rotate: -150deg;
+  transform: rotate(var(--rotate));
+}
+div.number6 > span{
+  --rotate: -180deg;
+  transform: rotate(var(--rotate));
+}
+div.number7 > span{
+  --rotate: -210deg;
+  transform: rotate(var(--rotate));
+}
+div.number8 > span{
+  --rotate: -240deg;
+  transform: rotate(var(--rotate));
+}
+div.number9 > span{
+  --rotate: -270deg;
+  transform: rotate(var(--rotate));
+}
+div.number10 > span{
+  --rotate: -300deg;
+  transform: rotate(var(--rotate));
+}
+div.number11 > span{
+  --rotate: -330deg;
+  transform: rotate(var(--rotate));
+}
+div.number12 > span{
+  --rotate: 0deg;
+  transform: rotate(var(--rotate));
+}
+*/
+.clock-hand-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div.second-hand{
+  --rotate: 0deg;
+  height: 100px;
+  width: 6px;
+  position: absolute;
+  background-color: #595959;
+  border-radius: 50% 50% 0 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+  transform-origin: bottom center;
+}
+
+div.minute-hand{
+  --rotate: 0deg;
+  height: 80px;
+  width: 8px;
+  position: absolute;
+  background-color: #404040;
+  border-radius: 50% 50% 0 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+  transform-origin: bottom center;
+}
+
+div.hour-hand{
+  --rotate: 0deg;
+  height: 60px;
+  width: 10px;
+  position: absolute;
+  background-color: #1a1a1a;
+  border-radius: 50% 50% 0 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%) rotate(var(--rotate));
+  transform-origin: bottom center;
+}
